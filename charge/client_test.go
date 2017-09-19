@@ -71,7 +71,7 @@ func TestChargeMarkSafe(t *testing.T) {
 
 func TestChargeUpdate(t *testing.T) {
 	charge, err := Update("ch_123", &stripe.ChargeParams{
-		Desc: "Updated description",
+		Description: "Updated description",
 	})
 	assert.Nil(t, err)
 	assert.NotNil(t, charge)
