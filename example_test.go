@@ -55,7 +55,7 @@ func ExampleInvoice_update() {
 	stripe.Key = "sk_key"
 
 	params := &stripe.InvoiceParams{
-		Desc: "updated description",
+		Description: "updated description",
 	}
 
 	inv, err := invoice.Update("sub_example_id", params)
@@ -64,7 +64,7 @@ func ExampleInvoice_update() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%v\n", inv.Desc)
+	log.Printf("%v\n", inv.Description)
 }
 
 func ExampleCustomer_delete() {
