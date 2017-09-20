@@ -39,7 +39,7 @@ func TestFeeRefundUpdate(t *testing.T) {
 	refund, err := Update("fr_123", &stripe.FeeRefundParams{
 		ApplicationFee: "fee_123",
 		Params: stripe.Params{
-			Meta: map[string]string{
+			Metadata: map[string]string{
 				"foo": "bar",
 			},
 		},

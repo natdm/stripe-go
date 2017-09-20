@@ -144,13 +144,13 @@ func TestParams_AppendTo_Nested(t *testing.T) {
 	params := &testParams{
 		Field: "field_value",
 		Params: stripe.Params{
-			Meta: map[string]string{
+			Metadata: map[string]string{
 				"foo": "bar",
 			},
 		},
 		SubParams: &testSubParams{
 			Params: stripe.Params{
-				Meta: map[string]string{
+				Metadata: map[string]string{
 					"sub_foo": "bar",
 				},
 			},

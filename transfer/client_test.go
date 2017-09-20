@@ -37,7 +37,7 @@ func TestTransferNew(t *testing.T) {
 func TestTransferUpdate(t *testing.T) {
 	transfer, err := Update("tr_123", &stripe.TransferParams{
 		Params: stripe.Params{
-			Meta: map[string]string{
+			Metadata: map[string]string{
 				"foo": "bar",
 			},
 		},
