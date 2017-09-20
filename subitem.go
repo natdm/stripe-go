@@ -10,14 +10,14 @@ type SubItemParams struct {
 	ProrationDate int64  `form:"proration_date"`
 	Quantity      uint64 `form:"quantity"`
 	QuantityZero  bool   `form:"quantity,zero"`
-	Sub           string `form:"subscription"`
+	Subscription  string `form:"subscription"`
 }
 
 // SubItemListParams is the set of parameters that can be used when listing invoice items.
 // For more details see https://stripe.com/docs/api#list_invoiceitems.
 type SubItemListParams struct {
-	ListParams `form:"*"`
-	Sub        string `form:"subscription"`
+	ListParams   `form:"*"`
+	Subscription string `form:"subscription"`
 }
 
 // SubItem is the resource representing a Stripe subscription item.
@@ -26,7 +26,7 @@ type SubItem struct {
 	Created  int64             `json:"created"`
 	Deleted  bool              `json:"deleted"`
 	ID       string            `json:"id"`
-	Meta     map[string]string `json:"metadata"`
+	Metadata map[string]string `json:"metadata"`
 	Plan     *Plan             `json:"plan"`
 	Quantity uint64            `json:"quantity"`
 }

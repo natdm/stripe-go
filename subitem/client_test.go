@@ -31,9 +31,9 @@ func TestSubItemList(t *testing.T) {
 
 func TestSubItemNew(t *testing.T) {
 	item, err := New(&stripe.SubItemParams{
-		Quantity: 99,
-		Plan:     "plan_123",
-		Sub:      "sub_123",
+		Quantity:     99,
+		Plan:         "plan_123",
+		Subscription: "sub_123",
 	})
 	assert.Nil(t, err)
 	assert.NotNil(t, item)
