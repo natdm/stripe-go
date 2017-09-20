@@ -297,7 +297,7 @@ type LegalEntity struct {
 	PersonalID            string               `json:"-" form:"personal_id_number"`
 	PersonalIDProvided    bool                 `json:"personal_id_number_provided" form:"-"`
 	PhoneNumber           string               `json:"phone_number" form:"phone_number"`
-	SSNLast4             string               `json:"-" form:"ssn_last_4"`
+	SSNLast4              string               `json:"-" form:"ssn_last_4"`
 	SSNLast4Provided      bool                 `json:"ssn_last_4_provided" form:"-"`
 	Type                  LegalEntityType      `json:"type" form:"type"`
 	Verification          IdentityVerification `json:"verification" form:"verification"`
