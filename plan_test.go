@@ -50,8 +50,8 @@ func TestPlanParams_AppendTo(t *testing.T) {
 		{"interval", &PlanParams{Interval: "month"}, "month"},
 		{"interval_count", &PlanParams{IntervalCount: 3}, strconv.FormatUint(3, 10)},
 		{"name", &PlanParams{Name: "Sapphire Elite"}, "Sapphire Elite"},
-		{"statement_descriptor", &PlanParams{Statement: "Sapphire Elite"}, "Sapphire Elite"},
-		{"trial_period_days", &PlanParams{TrialPeriod: 123}, strconv.FormatUint(123, 10)},
+		{"statement_descriptor", &PlanParams{StatementDescriptor: "Sapphire Elite"}, "Sapphire Elite"},
+		{"trial_period_days", &PlanParams{TrialPeriodDays: 123}, strconv.FormatUint(123, 10)},
 	}
 	for _, tc := range testCases {
 		t.Run(tc.field, func(t *testing.T) {

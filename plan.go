@@ -7,18 +7,18 @@ type PlanInterval string
 // Plan is the resource representing a Stripe plan.
 // For more details see https://stripe.com/docs/api#plans.
 type Plan struct {
-	Amount        uint64            `json:"amount"`
-	Created       int64             `json:"created"`
-	Currency      Currency          `json:"currency"`
-	Deleted       bool              `json:"deleted"`
-	ID            string            `json:"id"`
-	Interval      PlanInterval      `json:"interval"`
-	IntervalCount uint64            `json:"interval_count"`
-	Live          bool              `json:"livemode"`
-	Meta          map[string]string `json:"metadata"`
-	Name          string            `json:"name"`
-	Statement     string            `json:"statement_descriptor"`
-	TrialPeriod   uint64            `json:"trial_period_days"`
+	Amount              uint64            `json:"amount"`
+	Created             int64             `json:"created"`
+	Currency            Currency          `json:"currency"`
+	Deleted             bool              `json:"deleted"`
+	ID                  string            `json:"id"`
+	Interval            PlanInterval      `json:"interval"`
+	IntervalCount       uint64            `json:"interval_count"`
+	Livemode            bool              `json:"livemode"`
+	Metadata            map[string]string `json:"metadata"`
+	Name                string            `json:"name"`
+	StatementDescriptor string            `json:"statement_descriptor"`
+	TrialPeriodDays     uint64            `json:"trial_period_days"`
 }
 
 // PlanList is a list of plans as returned from a list endpoint.
@@ -38,13 +38,13 @@ type PlanListParams struct {
 // PlanParams is the set of parameters that can be used when creating or updating a plan.
 // For more details see https://stripe.com/docs/api#create_plan and https://stripe.com/docs/api#update_plan.
 type PlanParams struct {
-	Params        `form:"*"`
-	Amount        uint64       `form:"amount"`
-	Currency      Currency     `form:"currency"`
-	ID            string       `form:"id"`
-	Interval      PlanInterval `form:"interval"`
-	IntervalCount uint64       `form:"interval_count"`
-	Name          string       `form:"name"`
-	Statement     string       `form:"statement_descriptor"`
-	TrialPeriod   uint64       `form:"trial_period_days"`
+	Params              `form:"*"`
+	Amount              uint64       `form:"amount"`
+	Currency            Currency     `form:"currency"`
+	ID                  string       `form:"id"`
+	Interval            PlanInterval `form:"interval"`
+	IntervalCount       uint64       `form:"interval_count"`
+	Name                string       `form:"name"`
+	StatementDescriptor string       `form:"statement_descriptor"`
+	TrialPeriodDays     uint64       `form:"trial_period_days"`
 }
