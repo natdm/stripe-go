@@ -101,20 +101,20 @@ type BankAccountListParams struct {
 
 // BankAccount represents a Stripe bank account.
 type BankAccount struct {
-	AccountHolderName string            `json:"account_holder_name"`
-	AccountHolderType string            `json:"account_holder_type"`
-	Country           string            `json:"country"`
-	Currency          Currency          `json:"currency"`
-	Customer          *Customer         `json:"customer"`
-	Default           bool              `json:"default_for_currency"`
-	Deleted           bool              `json:"deleted"`
-	Fingerprint       string            `json:"fingerprint"`
-	ID                string            `json:"id"`
-	LastFour          string            `json:"last4"`
-	Meta              map[string]string `json:"metadata"`
-	Name              string            `json:"bank_name"`
-	Routing           string            `json:"routing_number"`
-	Status            BankAccountStatus `json:"status"`
+	AccountHolderName  string            `json:"account_holder_name"`
+	AccountHolderType  string            `json:"account_holder_type"`
+	Country            string            `json:"country"`
+	Currency           Currency          `json:"currency"`
+	Customer           *Customer         `json:"customer"`
+	DefaultForCurrency bool              `json:"default_for_currency"`
+	Deleted            bool              `json:"deleted"`
+	Fingerprint        string            `json:"fingerprint"`
+	ID                 string            `json:"id"`
+	Last4              string            `json:"last4"`
+	Metadata           map[string]string `json:"metadata"`
+	Name               string            `json:"bank_name"`
+	RoutingNumber      string            `json:"routing_number"`
+	Status             BankAccountStatus `json:"status"`
 }
 
 // BankAccountList is a list object for bank accounts.
