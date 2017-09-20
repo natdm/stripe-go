@@ -24,16 +24,16 @@ type Fee struct {
 	Account                *Account       `json:"account"`
 	Amount                 uint64         `json:"amount"`
 	AmountRefunded         uint64         `json:"amount_refunded"`
-	App                    string         `json:"application"`
+	Application            string         `json:"application"`
+	BalanceTransaction     *Transaction   `json:"balance_transaction"`
 	Charge                 *Charge        `json:"charge"`
 	Created                int64          `json:"created"`
 	Currency               Currency       `json:"currency"`
 	ID                     string         `json:"id"`
-	Live                   bool           `json:"livemode"`
+	Livemode               bool           `json:"livemode"`
 	OriginatingTransaction *Charge        `json:"originating_transaction"`
 	Refunded               bool           `json:"refunded"`
 	Refunds                *FeeRefundList `json:"refunds"`
-	Tx                     *Transaction   `json:"balance_transaction"`
 }
 
 // FeeList is a list of fees as retrieved from a list endpoint.
