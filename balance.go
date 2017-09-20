@@ -71,41 +71,41 @@ type TxParams struct {
 // TxListParams is the set of parameters that can be used when listing balance transactions.
 // For more details see https://stripe.com/docs/api/#balance_history.
 type TxListParams struct {
-	ListParams     `form:"*"`
-	Available      int64             `form:"available_on"`
-	AvailableRange *RangeQueryParams `form:"available_on"`
-	Created        int64             `form:"created"`
-	CreatedRange   *RangeQueryParams `form:"created"`
-	Currency       string            `form:"currency"`
-	Payout         string            `form:"payout"`
-	Src            string            `form:"source"`
-	Type           TransactionType   `form:"type"`
+	ListParams       `form:"*"`
+	AvailableOn      int64             `form:"available_on"`
+	AvailableOnRange *RangeQueryParams `form:"available_on"`
+	Created          int64             `form:"created"`
+	CreatedRange     *RangeQueryParams `form:"created"`
+	Currency         string            `form:"currency"`
+	Payout           string            `form:"payout"`
+	Source           string            `form:"source"`
+	Type             TransactionType   `form:"type"`
 }
 
 // Balance is the resource representing your Stripe balance.
 // For more details see https://stripe.com/docs/api/#balance.
 type Balance struct {
 	Available []Amount `json:"available"`
-	Live      bool     `json:"livemode"`
+	Livemode  bool     `json:"livemode"`
 	Pending   []Amount `json:"pending"`
 }
 
 // Transaction is the resource representing the balance transaction.
 // For more details see https://stripe.com/docs/api/#balance.
 type Transaction struct {
-	Amount     int64             `json:"amount"`
-	Available  int64             `json:"available_on"`
-	Created    int64             `json:"created"`
-	Currency   Currency          `json:"currency"`
-	Desc       string            `json:"description"`
-	ID         string            `json:"id"`
-	Fee        int64             `json:"fee"`
-	FeeDetails []TxFee           `json:"fee_details"`
-	Net        int64             `json:"net"`
-	Recipient  string            `json:"recipient"`
-	Src        TransactionSource `json:"source"`
-	Status     TransactionStatus `json:"status"`
-	Type       TransactionType   `json:"type"`
+	Amount      int64                   `json:"amount"`
+	AvailableOn int64                   `json:"available_on"`
+	Created     int64                   `json:"created"`
+	Currency    Currency                `json:"currency"`
+	Description string                  `json:"description"`
+	ID          string                  `json:"id"`
+	Fee         int64                   `json:"fee"`
+	FeeDetails  []BalanceTransactionFee `json:"fee_details"`
+	Net         int64                   `json:"net"`
+	Recipient   string                  `json:"recipient"`
+	Source      TransactionSource       `json:"source"`
+	Status      TransactionStatus       `json:"status"`
+	Type        TransactionType         `json:"type"`
 }
 
 // TransactionList is a list of transactions as returned from a list endpoint.
@@ -121,11 +121,11 @@ type Amount struct {
 }
 
 // TxFee is a structure that breaks down the fees in a transaction.
-type TxFee struct {
+type BalanceTransactionFee struct {
 	Application string   `json:"application"`
 	Amount      int64    `json:"amount"`
 	Currency    Currency `json:"currency"`
-	Desc        string   `json:"description"`
+	Description string   `json:"description"`
 	Type        string   `json:"type"`
 }
 
