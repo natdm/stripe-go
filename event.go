@@ -60,7 +60,7 @@ func (e *Event) GetObjValue(keys ...string) string {
 
 // GetPrevValue returns the value from the e.Data.Prev bag based on the keys hierarchy.
 func (e *Event) GetPrevValue(keys ...string) string {
-	return getValue(e.Data.Prev, keys)
+	return getValue(e.Data.PreviousAttributes, keys)
 }
 
 // UnmarshalJSON handles deserialization of the EventData.

@@ -115,7 +115,7 @@ type DisputeEvidence struct {
 	DuplicateChargeID            string `json:"duplicate_charge_id"`
 	DuplicateChargeDocumentation *File  `json:"duplicate_charge_documentation"`
 	DuplicateChargeExplanation   string `json:"duplicate_charge_explanation"`
-	ProductDescr                 string `json:"product_description"`
+	ProductDescription                 string `json:"product_description"`
 	Receipt                      *File  `json:"receipt"`
 	RefundPolicy                 *File  `json:"refund_policy"`
 	RefundPolicyDisclosure       string `json:"refund_policy_disclosure"`

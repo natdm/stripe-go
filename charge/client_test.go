@@ -80,7 +80,7 @@ func TestChargeUpdate(t *testing.T) {
 func TestChargeUpdateDispute(t *testing.T) {
 	charge, err := UpdateDispute("ch_123", &stripe.DisputeParams{
 		Evidence: &stripe.DisputeEvidenceParams{
-			ProductDesc: "original description",
+			ProductDescription: "original description",
 		},
 	})
 	assert.Nil(t, err)
