@@ -65,7 +65,7 @@ type RecipientTransfer struct {
 	Created             int64                        `json:"created"`
 	Currency            Currency                     `json:"currency"`
 	Date                int64                        `json:"date"`
-	description         string                       `json:"description"`
+	Description         string                       `json:"description"`
 	Destination         RecipientTransferDestination `json:"destination"`
 	FailureCode         RecipientTransferFailCode    `json:"failure_code"`
 	FailureMessage      string                       `json:"failure_message"`

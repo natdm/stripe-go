@@ -45,7 +45,7 @@ type BitcoinReceiver struct {
 	Created               int64                   `json:"created"`
 	Currency              Currency                `json:"currency"`
 	Customer              string                  `json:"customer"`
-	description           string                  `json:"description"`
+	Description           string                  `json:"description"`
 	Email                 string                  `json:"email"`
 	Filled                bool                    `json:"filled"`
 	ID                    string                  `json:"id"`

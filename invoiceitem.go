@@ -37,8 +37,8 @@ type InvoiceItem struct {
 	Discountable bool              `json:"discountable"`
 	ID           string            `json:"id"`
 	Invoice      *Invoice          `json:"invoice"`
-	livemode     bool              `json:"livemode"`
-	metadata     map[string]string `json:"metadata"`
+	Livemode     bool              `json:"livemode"`
+	Metadata     map[string]string `json:"metadata"`
 	Period       *Period           `json:"period"`
 	Plan         *Plan             `json:"plan"`
 	Proration    bool              `json:"proration"`
