@@ -30,7 +30,7 @@ func TestTransferUnmarshal(t *testing.T) {
 		t.Errorf("Problem deserializing transfer, got ID %v", transfer.ID)
 	}
 
-	source_tx := transfer.SourceTx
+	source_tx := transfer.SourceTransaction
 	if source_tx == nil {
 		t.Errorf("Problem deserializing transfer, didn't get a SourceTx")
 	}
