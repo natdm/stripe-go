@@ -12,7 +12,7 @@ type ApplePayDomain struct {
 	Deleted    bool   `json:"deleted"`
 	DomainName string `json:"domain_name"`
 	ID         string `json:"id"`
-	Live       bool   `json:"livemode"`
+	Livemode   bool   `json:"livemode"`
 }
 
 // ApplePayDomainListParams are the parameters allowed during ApplePayDomain listing.
