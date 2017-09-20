@@ -30,8 +30,8 @@ func TestTokenNew_WithCard(t *testing.T) {
 	token, err := New(&stripe.TokenParams{
 		Card: &stripe.CardParams{
 			Number: "4242424242424242", // raw PAN as we're testing token creation
-			Month:  "10",
-			Year:   "20",
+			ExpMonth:  "10",
+			ExpYear:   "20",
 		},
 	})
 	assert.Nil(t, err)
