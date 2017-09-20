@@ -93,8 +93,8 @@ type Payout struct {
 	FailMessage               string            `json:"failure_message"`
 	FailureBalanceTransaction *Transaction      `json:"failure_balance_transaction"`
 	ID                        string            `json:"id"`
-	Live                      bool              `json:"livemode"`
-	Meta                      map[string]string `json:"metadata"`
+	Livemode                  bool              `json:"livemode"`
+	Metadata                  map[string]string `json:"metadata"`
 	Method                    PayoutMethodType  `json:"method"`
 	SourceType                PayoutSourceType  `json:"source_type"`
 	StatementDescriptor       string            `json:"statement_descriptor"`
