@@ -7,22 +7,22 @@ import (
 )
 
 const (
-	TxAvailable stripe.TransactionStatus = "available"
-	TxPending   stripe.TransactionStatus = "pending"
+	BalanceTransactionAvailable stripe.TransactionStatus = "available"
+	BalanceTransactionPending   stripe.TransactionStatus = "pending"
 
-	TxCharge                  stripe.TransactionType = "charge"
-	TxRefund                  stripe.TransactionType = "refund"
-	TxAdjust                  stripe.TransactionType = "adjustment"
-	TxAppFee                  stripe.TransactionType = "application_fee"
-	TxFeeRefund               stripe.TransactionType = "application_fee_refund"
-	TxRecipientTransfer       stripe.TransactionType = "recipient_transfer"
-	TxRecipientTransferCancel stripe.TransactionType = "recipient_transfer_cancel"
-	TxRecipientTransferFail   stripe.TransactionType = "recipient_transfer_failure"
-	TxPayout                  stripe.TransactionType = "payout"
-	TxPayoutCancel            stripe.TransactionType = "payout_cancel"
-	TxPayoutFail              stripe.TransactionType = "payout_failure"
-	TxTransfer                stripe.TransactionType = "transfer"
-	TxTransferCancel          stripe.TransactionType = "transfer_refund"
+	BalanceTransactionCharge                  stripe.TransactionType = "charge"
+	BalanceTransactionRefund                  stripe.TransactionType = "refund"
+	BalanceTransactionAdjust                  stripe.TransactionType = "adjustment"
+	BalanceTransactionAppFee                  stripe.TransactionType = "application_fee"
+	BalanceTransactionFeeRefund               stripe.TransactionType = "application_fee_refund"
+	BalanceTransactionRecipientTransfer       stripe.TransactionType = "recipient_transfer"
+	BalanceTransactionRecipientTransferCancel stripe.TransactionType = "recipient_transfer_cancel"
+	BalanceTransactionRecipientTransferFail   stripe.TransactionType = "recipient_transfer_failure"
+	BalanceTransactionPayout                  stripe.TransactionType = "payout"
+	BalanceTransactionPayoutCancel            stripe.TransactionType = "payout_cancel"
+	BalanceTransactionPayoutFail              stripe.TransactionType = "payout_failure"
+	BalanceTransactionTransfer                stripe.TransactionType = "transfer"
+	BalanceTransactionTransferCancel          stripe.TransactionType = "transfer_refund"
 )
 
 // Client is used to invoke /balance and transaction-related APIs.
@@ -53,13 +53,13 @@ func (c Client) Get(params *stripe.BalanceParams) (*stripe.Balance, error) {
 	return balance, err
 }
 
-// GetTx returns the details of a balance transaction.
+// GetBalanceTransaction returns the details of a balance transaction.
 // For more details see	https://stripe.com/docs/api#retrieve_balance_transaction.
-func GetTx(id string, params *stripe.TxParams) (*stripe.Transaction, error) {
-	return getC().GetTx(id, params)
+func GetBalanceTransaction(id string, params *stripe.BalanceTransactionParams) (*stripe.Transaction, error) {
+	return getC().GetBalanceTransaction(id, params)
 }
 
-func (c Client) GetTx(id string, params *stripe.TxParams) (*stripe.Transaction, error) {
+func (c Client) GetBalanceTransaction(id string, params *stripe.BalanceTransactionParams) (*stripe.Transaction, error) {
 	var body *form.Values
 	var commonParams *stripe.Params
 
@@ -77,11 +77,11 @@ func (c Client) GetTx(id string, params *stripe.TxParams) (*stripe.Transaction, 
 
 // List returns a list of balance transactions.
 // For more details see https://stripe.com/docs/api#balance_history.
-func List(params *stripe.TxListParams) *Iter {
+func List(params *stripe.BalanceTransactionListParams) *Iter {
 	return getC().List(params)
 }
 
-func (c Client) List(params *stripe.TxListParams) *Iter {
+func (c Client) List(params *stripe.BalanceTransactionListParams) *Iter {
 	var body *form.Values
 	var lp *stripe.ListParams
 	var p *stripe.Params

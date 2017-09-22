@@ -21,8 +21,8 @@ const (
 	// TransactionSourceDispute is a constant representing a transaction source of dispute
 	TransactionSourceDispute TransactionSourceType = "dispute"
 
-	// TransactionSourceFee is a constant representing a transaction source of application_fee
-	TransactionSourceFee TransactionSourceType = "application_fee"
+	// TransactionSourceApplicationFee is a constant representing a transaction source of application_fee
+	TransactionSourceApplicationFee TransactionSourceType = "application_fee"
 
 	// TransactionSourcePayout is a constant representing a transaction source of payout
 	TransactionSourcePayout TransactionSourceType = "payout"
@@ -62,15 +62,15 @@ type BalanceParams struct {
 	Params `form:"*"`
 }
 
-// TxParams is the set of parameters that can be used when retrieving a transaction.
+// BalanceTransactionParams is the set of parameters that can be used when retrieving a transaction.
 // For more details see https://stripe.com/docs/api#retrieve_balance_transaction.
-type TxParams struct {
+type BalanceTransactionParams struct {
 	Params `form:"*"`
 }
 
-// TxListParams is the set of parameters that can be used when listing balance transactions.
+// BalanceTransactionListParams is the set of parameters that can be used when listing balance transactions.
 // For more details see https://stripe.com/docs/api/#balance_history.
-type TxListParams struct {
+type BalanceTransactionListParams struct {
 	ListParams       `form:"*"`
 	AvailableOn      int64             `form:"available_on"`
 	AvailableOnRange *RangeQueryParams `form:"available_on"`
@@ -120,7 +120,7 @@ type Amount struct {
 	Currency Currency `json:"currency"`
 }
 
-// TxFee is a structure that breaks down the fees in a transaction.
+// BalanceTransactionFee is a structure that breaks down the fees in a transaction.
 type BalanceTransactionFee struct {
 	Application string   `json:"application"`
 	Amount      int64    `json:"amount"`
@@ -161,7 +161,7 @@ func (s *TransactionSource) UnmarshalJSON(data []byte) error {
 			json.Unmarshal(data, &s.Charge)
 		case TransactionSourceDispute:
 			json.Unmarshal(data, &s.Dispute)
-		case TransactionSourceFee:
+		case TransactionSourceApplicationFee:
 			json.Unmarshal(data, &s.Fee)
 		case TransactionSourcePayout:
 			json.Unmarshal(data, &s.Payout)
