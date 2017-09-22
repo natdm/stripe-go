@@ -52,11 +52,11 @@ const (
 	// Manual is a constant value representing a manual payout interval.
 	Manual Interval = "manual"
 
-	// Month is a constant value representing a monthly payout interval.
-	Month Interval = "monthly"
+	// Monthly is a constant value representing a monthly payout interval.
+	Monthly Interval = "monthly"
 
-	// Week is a constant value representing a weekly payout interval.
-	Week Interval = "weekly"
+	// Weekly is a constant value representing a weekly payout interval.
+	Weekly Interval = "weekly"
 )
 
 // AccountParams are the parameters allowed during account creation/updates.
@@ -75,6 +75,7 @@ type AccountParams struct {
 	NoDebitNegativeBalances   bool                          `form:"debit_negative_balances,invert"`
 	PayoutSchedule            *PayoutScheduleParams         `form:"payout_schedule"`
 	PayoutStatementDescriptor string                        `form:"payout_statement_descriptor"`
+	ProductDescription        string                        `form:"product_description"`
 	StatementDescriptor       string                        `form:"statement_descriptor"`
 	SupportEmail              string                        `form:"support_email"`
 	SupportPhone              string                        `form:"support_phone"`
@@ -272,50 +273,49 @@ type LegalEntity struct {
 	// owners.
 	AdditionalOwnersEmpty bool `form:"additional_owners,empty"`
 
-	Address               Address              `json:"address" form:"address"`
-	AddressKana           Address              `json:"address_kana" form:"address_kana"`
-	AddressKanji          Address              `json:"address_kanji" form:"address_kanji"`
-	BusinessName          string               `json:"business_name" form:"business_name"`
-	BusinessNameKana      string               `json:"business_name_kana" form:"business_name_kana"`
-	BusinessNameKanji     string               `json:"business_name_kanji" form:"business_name_kanji"`
-	BusinessTaxID         string               `json:"-" form:"business_tax_id"`
-	BusinessTaxIDProvided bool                 `json:"business_tax_id_provided" form:"-"`
-	BusinessVatID         string               `json:"-" form:"business_vat_id"`
-	BusinessVatIDProvided bool                 `json:"business_vat_id_provided" form:"-"`
-	DOB                   DOB                  `json:"dob" form:"dob"`
-	FirstName             string               `json:"first_name" form:"first_name"`
-	FirstNameKana         string               `json:"first_name_kana" form:"first_name_kana"`
-	FirstNameKanji        string               `json:"first_name_kanji" form:"first_name_kanji"`
-	Gender                Gender               `json:"gender" form:"gender"`
-	LastName              string               `json:"last_name" form:"last_name"`
-	LastNameKana          string               `json:"last_name_kana" form:"last_name_kana"`
-	LastNameKanji         string               `json:"last_name_kanji" form:"last_name_kanji"`
-	MaidenName            string               `json:"maiden_name" form:"maiden_name"`
-	PersonalAddress       Address              `json:"personal_address" form:"personal_address"`
-	PersonalAddressKana   Address              `json:"personal_address_kana" form:"personal_address_kana"`
-	PersonalAddressKanji  Address              `json:"personal_address_kanji" form:"personal_address_kanji"`
-	PersonalID            string               `json:"-" form:"personal_id_number"`
-	PersonalIDProvided    bool                 `json:"personal_id_number_provided" form:"-"`
-	PhoneNumber           string               `json:"phone_number" form:"phone_number"`
-	SSNLast4              string               `json:"-" form:"ssn_last_4"`
-	SSNLast4Provided      bool                 `json:"ssn_last_4_provided" form:"-"`
-	Type                  LegalEntityType      `json:"type" form:"type"`
-	Verification          IdentityVerification `json:"verification" form:"verification"`
+	Address                  Address              `json:"address" form:"address"`
+	AddressKana              Address              `json:"address_kana" form:"address_kana"`
+	AddressKanji             Address              `json:"address_kanji" form:"address_kanji"`
+	BusinessName             string               `json:"business_name" form:"business_name"`
+	BusinessNameKana         string               `json:"business_name_kana" form:"business_name_kana"`
+	BusinessNameKanji        string               `json:"business_name_kanji" form:"business_name_kanji"`
+	BusinessTaxID            string               `json:"-" form:"business_tax_id"`
+	BusinessTaxIDProvided    bool                 `json:"business_tax_id_provided" form:"-"`
+	BusinessVatID            string               `json:"-" form:"business_vat_id"`
+	BusinessVatIDProvided    bool                 `json:"business_vat_id_provided" form:"-"`
+	DOB                      DOB                  `json:"dob" form:"dob"`
+	FirstName                string               `json:"first_name" form:"first_name"`
+	FirstNameKana            string               `json:"first_name_kana" form:"first_name_kana"`
+	FirstNameKanji           string               `json:"first_name_kanji" form:"first_name_kanji"`
+	Gender                   Gender               `json:"gender" form:"gender"`
+	LastName                 string               `json:"last_name" form:"last_name"`
+	LastNameKana             string               `json:"last_name_kana" form:"last_name_kana"`
+	LastNameKanji            string               `json:"last_name_kanji" form:"last_name_kanji"`
+	MaidenName               string               `json:"maiden_name" form:"maiden_name"`
+	PersonalAddress          Address              `json:"personal_address" form:"personal_address"`
+	PersonalAddressKana      Address              `json:"personal_address_kana" form:"personal_address_kana"`
+	PersonalAddressKanji     Address              `json:"personal_address_kanji" form:"personal_address_kanji"`
+	PersonalIDNumber         string               `json:"-" form:"personal_id_number"`
+	PersonalIDNumberProvided bool                 `json:"personal_id_number_provided" form:"-"`
+	PhoneNumber              string               `json:"phone_number" form:"phone_number"`
+	SSNLast4                 string               `json:"-" form:"ssn_last_4"`
+	SSNLast4Provided         bool                 `json:"ssn_last_4_provided" form:"-"`
+	Type                     LegalEntityType      `json:"type" form:"type"`
+	Verification             IdentityVerification `json:"verification" form:"verification"`
 }
 
 // Address is the structure for an account address.
 type Address struct {
-	City    string `json:"city" form:"city"`
-	Country string `json:"country" form:"country"`
-	Line1   string `json:"line1" form:"line1"`
-	Line2   string `json:"line2" form:"line2"`
-	State   string `json:"state" form:"state"`
+	City       string `json:"city" form:"city"`
+	Country    string `json:"country" form:"country"`
+	Line1      string `json:"line1" form:"line1"`
+	Line2      string `json:"line2" form:"line2"`
+	PostalCode string `json:"postal_code" form:"postal_code"`
+	State      string `json:"state" form:"state"`
 
 	// Town/cho-me. Note that this is only used for Kana/Kanji representations
 	// of an address.
 	Town string `json:"town" form:"town"`
-
-	PostalCode string `json:"postal_code" form:"postal_code"`
 }
 
 // DOB is a structure for an account owner's date of birth.
@@ -335,6 +335,7 @@ type Owner struct {
 	DOB          DOB                  `json:"dob" form:"dob"`
 	FirstName    string               `json:"first_name" form:"first_name"`
 	LastName     string               `json:"last_name" form:"last_name"`
+	MaidenName   string               `json:"maiden_name" form:"maiden_name"`
 	Verification IdentityVerification `json:"verification" form:"verification"`
 }
 
