@@ -17,9 +17,9 @@ func TestTokenGet(t *testing.T) {
 func TestTokenNew_WithBankAccount(t *testing.T) {
 	token, err := New(&stripe.TokenParams{
 		BankAccount: &stripe.BankAccountParams{
-			Country: "US",
-			Routing: "110000000",
-			Account: "000123456789",
+			Country:       "US",
+			RoutingNumber: "110000000",
+			AccountNumber: "000123456789",
 		},
 	})
 	assert.Nil(t, err)
