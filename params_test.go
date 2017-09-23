@@ -75,9 +75,9 @@ func TestListParams_Nested(t *testing.T) {
 	params := &testListParams{
 		Field: "field_value",
 		ListParams: stripe.ListParams{
-			End:   "acct_123",
-			Limit: 100,
-			Start: "acct_123",
+			EndingBefore:  "acct_123",
+			Limit:         100,
+			StartingAfter: "acct_123",
 		},
 	}
 
@@ -203,7 +203,7 @@ func TestListParams_Expand(t *testing.T) {
 		p := stripe.ListParams{}
 
 		for _, exp := range testCase.Expand {
-			p.Expand(exp)
+			p.AddExpand(exp)
 		}
 
 		body := valuesFromArray(testCase.InitialBody)

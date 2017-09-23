@@ -34,9 +34,9 @@ func ExampleCharge_get() {
 	stripe.Key = "sk_key"
 
 	params := &stripe.ChargeParams{}
-	params.Expand("customer")
-	params.Expand("application")
-	params.Expand("balance_transaction")
+	params.AddExpand("customer")
+	params.AddExpand("application")
+	params.AddExpand("balance_transaction")
 
 	ch, err := charge.Get("ch_example_id", params)
 

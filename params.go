@@ -23,8 +23,8 @@ type Params struct {
 	// Please use StripeAccount instead.
 	Account string `form:"-"` // Passed as header
 
-	Exp   []string     `form:"expand"`
-	Extra *ExtraValues `form:"*"`
+	Expand []string     `form:"expand"`
+	Extra  *ExtraValues `form:"*"`
 
 	// Headers may be used to provide extra header lines on the HTTP request.
 	Headers http.Header `form:"-"`
@@ -58,10 +58,10 @@ func (v ExtraValues) AppendTo(body *form.Values, keyParts []string) {
 // ListParams is the structure that contains the common properties
 // of any *ListParams structure.
 type ListParams struct {
-	End     string   `form:"ending_before"`
-	Exp     []string `form:"expand"`
-	Filters Filters  `form:"*"`
-	Limit   int      `form:"limit"`
+	EndingBefore string   `form:"ending_before"`
+	Expand       []string `form:"expand"`
+	Filters      Filters  `form:"*"`
+	Limit        int      `form:"limit"`
 
 	// Single specifies whether this is a single page iterator. By default,
 	// listing through an iterator will automatically grab additional pages as
@@ -69,7 +69,7 @@ type ListParams struct {
 	// page, set this to true.
 	Single bool `form:"-"` // Not an API parameter
 
-	Start string `form:"starting_after"`
+	StartingAfter string `form:"starting_after"`
 
 	// StripeAccount may contain the ID of a connected account. By including
 	// this field, the request is made as if it originated from the connected
@@ -156,9 +156,9 @@ func (p *Params) SetStripeAccount(val string) {
 	p.StripeAccount = val
 }
 
-// Expand appends a new field to expand.
-func (p *Params) Expand(f string) {
-	p.Exp = append(p.Exp, f)
+// AddExpand appends a new field to expand.
+func (p *Params) AddExpand(f string) {
+	p.Expand = append(p.Expand, f)
 }
 
 // AddMeta adds a new key-value pair to the Metadata.
@@ -179,9 +179,9 @@ func (p *Params) AddExtra(key, value string) {
 	p.Extra.Add(key, value)
 }
 
-// Expand appends a new field to expand.
-func (p *ListParams) Expand(f string) {
-	p.Exp = append(p.Exp, f)
+// AddExpand appends a new field to expand.
+func (p *ListParams) AddExpand(f string) {
+	p.Expand = append(p.Expand, f)
 }
 
 // ToParams converts a ListParams to a Params by moving over any fields that
