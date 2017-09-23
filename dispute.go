@@ -67,19 +67,19 @@ type DisputeListParams struct {
 // Dispute is the resource representing a Stripe dispute.
 // For more details see https://stripe.com/docs/api#disputes.
 type Dispute struct {
-	Amount              uint64            `json:"amount"`
-	BalanceTransactions []*Transaction    `json:"balance_transactions"`
-	Charge              string            `json:"charge"`
-	Created             int64             `json:"created"`
-	Currency            Currency          `json:"currency"`
-	Evidence            *DisputeEvidence  `json:"evidence"`
-	EvidenceDetails     *EvidenceDetails  `json:"evidence_details"`
-	ID                  string            `json:"id"`
-	IsChargeRefundable  bool              `json:"is_charge_refundable"`
-	Livemode            bool              `json:"livemode"`
-	Metadata            map[string]string `json:"metadata"`
-	Reason              DisputeReason     `json:"reason"`
-	Status              DisputeStatus     `json:"status"`
+	Amount              uint64                `json:"amount"`
+	BalanceTransactions []*BalanceTransaction `json:"balance_transactions"`
+	Charge              string                `json:"charge"`
+	Created             int64                 `json:"created"`
+	Currency            Currency              `json:"currency"`
+	Evidence            *DisputeEvidence      `json:"evidence"`
+	EvidenceDetails     *EvidenceDetails      `json:"evidence_details"`
+	ID                  string                `json:"id"`
+	IsChargeRefundable  bool                  `json:"is_charge_refundable"`
+	Livemode            bool                  `json:"livemode"`
+	Metadata            map[string]string     `json:"metadata"`
+	Reason              DisputeReason         `json:"reason"`
+	Status              DisputeStatus         `json:"status"`
 }
 
 // DisputeList is a list of disputes as retrieved from a list endpoint.

@@ -14,13 +14,13 @@ func TestBalanceGet(t *testing.T) {
 	assert.NotNil(t, balance)
 }
 
-func TestBalanceList(t *testing.T) {
+func TestBalanceTransactionList(t *testing.T) {
 	i := List(&stripe.BalanceTransactionListParams{})
 
 	// Verify that we can get at least one transaction
 	assert.True(t, i.Next())
 	assert.Nil(t, i.Err())
-	assert.NotNil(t, i.Transaction())
+	assert.NotNil(t, i.BalanceTransaction())
 }
 
 func TestBalanceBalanceTransactionGet(t *testing.T) {

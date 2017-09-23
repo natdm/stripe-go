@@ -40,20 +40,20 @@ type TransferListParams struct {
 // Transfer is the resource representing a Stripe transfer.
 // For more details see https://stripe.com/docs/api#transfers.
 type Transfer struct {
-	Amount             int64               `json:"amount"`
-	AmountReversed     int64               `json:"amount_reversed"`
-	BalanceTransaction *Transaction        `json:"balance_transaction"`
-	Created            int64               `json:"created"`
-	Currency           Currency            `json:"currency"`
-	Destination        TransferDestination `json:"destination"`
-	DestinationPayment string              `json:"destination_payment"`
-	ID                 string              `json:"id"`
-	Livemode           bool                `json:"livemode"`
-	Metadata           map[string]string   `json:"metadata"`
-	Reversals          *ReversalList       `json:"reversals"`
-	Reversed           bool                `json:"reversed"`
-	SourceTransaction  *TransactionSource  `json:"source_transaction"`
-	TransferGroup      string              `json:"transfer_group"`
+	Amount             int64                     `json:"amount"`
+	AmountReversed     int64                     `json:"amount_reversed"`
+	BalanceTransaction *BalanceTransaction       `json:"balance_transaction"`
+	Created            int64                     `json:"created"`
+	Currency           Currency                  `json:"currency"`
+	Destination        TransferDestination       `json:"destination"`
+	DestinationPayment string                    `json:"destination_payment"`
+	ID                 string                    `json:"id"`
+	Livemode           bool                      `json:"livemode"`
+	Metadata           map[string]string         `json:"metadata"`
+	Reversals          *ReversalList             `json:"reversals"`
+	Reversed           bool                      `json:"reversed"`
+	SourceTransaction  *BalanceTransactionSource `json:"source_transaction"`
+	TransferGroup      string                    `json:"transfer_group"`
 }
 
 // TransferList is a list of transfers as retrieved from a list endpoint.

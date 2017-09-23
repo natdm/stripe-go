@@ -39,7 +39,7 @@ func TestTransferUnmarshal(t *testing.T) {
 		t.Errorf("Problem deserializing transfer.source_transaction, wrong value for ID")
 	}
 
-	if source_transaction.Type != TransactionSourceCharge {
+	if source_transaction.Type != BalanceTransactionSourceCharge {
 		t.Errorf("Problem deserializing transfer.source_transaction, wrong value for Type")
 	}
 

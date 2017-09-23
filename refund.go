@@ -31,16 +31,16 @@ type RefundListParams struct {
 // Refund is the resource representing a Stripe refund.
 // For more details see https://stripe.com/docs/api#refunds.
 type Refund struct {
-	Amount             uint64            `json:"amount"`
-	BalanceTransaction *Transaction      `json:"balance_transaction"`
-	Charge             *Charge           `json:"charge"`
-	Created            int64             `json:"created"`
-	Currency           Currency          `json:"currency"`
-	ID                 string            `json:"id"`
-	Metadata           map[string]string `json:"metadata"`
-	Reason             RefundReason      `json:"reason"`
-	ReceiptNumber      string            `json:"receipt_number"`
-	Status             RefundStatus      `json:"status"`
+	Amount             uint64              `json:"amount"`
+	BalanceTransaction *BalanceTransaction `json:"balance_transaction"`
+	Charge             *Charge             `json:"charge"`
+	Created            int64               `json:"created"`
+	Currency           Currency            `json:"currency"`
+	ID                 string              `json:"id"`
+	Metadata           map[string]string   `json:"metadata"`
+	Reason             RefundReason        `json:"reason"`
+	ReceiptNumber      string              `json:"receipt_number"`
+	Status             RefundStatus        `json:"status"`
 }
 
 // RefundList is a list object for refunds.

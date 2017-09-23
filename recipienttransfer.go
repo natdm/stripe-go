@@ -59,7 +59,7 @@ type RecipientTransferDestination struct {
 type RecipientTransfer struct {
 	Amount              int64                        `json:"amount"`
 	AmountReversed      int64                        `json:"amount_reversed"`
-	BalanceTransaction  *Transaction                 `json:"balance_transaction"`
+	BalanceTransaction  *BalanceTransaction          `json:"balance_transaction"`
 	BankAccount         *BankAccount                 `json:"bank_account"`
 	Card                *Card                        `json:"card"`
 	Created             int64                        `json:"created"`
@@ -76,7 +76,7 @@ type RecipientTransfer struct {
 	Recipient           *Recipient                   `json:"recipient"`
 	Reversals           *ReversalList                `json:"reversals"`
 	Reversed            bool                         `json:"reversed"`
-	SourceTransation    *TransactionSource           `json:"source_transaction"`
+	SourceTransation    *BalanceTransactionSource    `json:"source_transaction"`
 	SourceType          RecipientTransferSourceType  `json:"source_type"`
 	StatementDescriptor string                       `json:"statement_descriptor"`
 	Status              RecipientTransferStatus      `json:"status"`
