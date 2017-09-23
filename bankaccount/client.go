@@ -16,10 +16,11 @@ type Client struct {
 }
 
 const (
-	NewAccount       stripe.BankAccountStatus = "new"
-	VerifiedAccount  stripe.BankAccountStatus = "verified"
-	ValidatedAccount stripe.BankAccountStatus = "validated"
-	ErroredAccount   stripe.BankAccountStatus = "errored"
+	NewAccount                stripe.BankAccountStatus = "new"
+	VerificationFAiledAccount stripe.BankAccountStatus = "verification_failed"
+	VerifiedAccount           stripe.BankAccountStatus = "verified"
+	ValidatedAccount          stripe.BankAccountStatus = "validated"
+	ErroredAccount            stripe.BankAccountStatus = "errored"
 )
 
 // New POSTs a new bank account.
