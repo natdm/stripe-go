@@ -34,12 +34,12 @@ type DisputeEvidenceParams struct {
 	CancellationRebuttal         string `form:"cancellation_rebuttal"`
 	CustomerCommunication        string `form:"customer_communication"`
 	CustomerEmailAddress         string `form:"customer_email_address"`
-	CustomerPurchaseIP           string `form:"customer_purchase_ip"`
 	CustomerName                 string `form:"customer_name"`
+	CustomerPurchaseIP           string `form:"customer_purchase_ip"`
 	CustomerSignature            string `form:"customer_signature"`
-	DuplicateChargeID            string `form:"duplicate_charge_id"`
 	DuplicateChargeDocumentation string `form:"duplicate_charge_documentation"`
 	DuplicateChargeExplanation   string `form:"duplicate_charge_explanation"`
+	DuplicateChargeID            string `form:"duplicate_charge_id"`
 	ProductDescription           string `form:"product_description"`
 	Receipt                      string `form:"receipt"`
 	RefundPolicy                 string `form:"refund_policy"`
@@ -108,13 +108,13 @@ type DisputeEvidence struct {
 	CancellationPolicyDisclosure string `json:"cancellation_policy_disclosure"`
 	CancellationRebuttal         string `json:"cancellation_rebuttal"`
 	CustomerCommunication        *File  `json:"customer_communication"`
-	CustomerEmail                string `json:"customer_email_address"`
-	CustomerPurchaseIP           string `json:"customer_purchase_ip"`
+	CustomerEmailAddress         string `json:"customer_email_address"`
 	CustomerName                 string `json:"customer_name"`
+	CustomerPurchaseIP           string `json:"customer_purchase_ip"`
 	CustomerSignature            *File  `json:"customer_signature"`
-	DuplicateChargeID            string `json:"duplicate_charge_id"`
 	DuplicateChargeDocumentation *File  `json:"duplicate_charge_documentation"`
 	DuplicateChargeExplanation   string `json:"duplicate_charge_explanation"`
+	DuplicateChargeID            string `json:"duplicate_charge_id"`
 	ProductDescription           string `json:"product_description"`
 	Receipt                      *File  `json:"receipt"`
 	RefundPolicy                 *File  `json:"refund_policy"`
