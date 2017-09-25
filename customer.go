@@ -47,8 +47,8 @@ type CustomerListParams struct {
 type Customer struct {
 	AccountBalance int64                    `json:"account_balance"`
 	BusinessVatID  string                   `json:"business_vat_id"`
-	Currency       Currency                 `json:"currency"`
 	Created        int64                    `json:"created"`
+	Currency       Currency                 `json:"currency"`
 	DefaultSource  *PaymentSource           `json:"default_source"`
 	Deleted        bool                     `json:"deleted"`
 	Delinquent     bool                     `json:"delinquent"`
