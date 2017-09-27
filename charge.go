@@ -127,7 +127,7 @@ func (c *Charge) UnmarshalJSON(data []byte) error {
 // ChargeList is a list of charges as retrieved from a list endpoint.
 type ChargeList struct {
 	ListMeta
-	Values []*Charge `json:"data"`
+	Data []*Charge `json:"data"`
 }
 
 // FraudDetails is the structure detailing fraud status.

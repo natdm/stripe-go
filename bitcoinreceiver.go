@@ -60,7 +60,7 @@ type BitcoinReceiver struct {
 // BitcoinReceiverList is a list of bitcoin receivers as retrieved from a list endpoint.
 type BitcoinReceiverList struct {
 	ListMeta
-	Values []*BitcoinReceiver `json:"data"`
+	Data []*BitcoinReceiver `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a BitcoinReceiver.

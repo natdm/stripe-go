@@ -105,7 +105,7 @@ type Payout struct {
 // PayoutList is a list of payouts as retrieved from a list endpoint.
 type PayoutList struct {
 	ListMeta
-	Values []*Payout `json:"data"`
+	Data []*Payout `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Payout.

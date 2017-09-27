@@ -49,7 +49,7 @@ type InvoiceItem struct {
 // InvoiceItemList is a list of invoice items as retrieved from a list endpoint.
 type InvoiceItemList struct {
 	ListMeta
-	Values []*InvoiceItem `json:"data"`
+	Data []*InvoiceItem `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of an InvoiceItem.

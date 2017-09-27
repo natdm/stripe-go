@@ -133,8 +133,8 @@ func (c Client) List(params *stripe.SubListParams) *Iter {
 		list := &stripe.SubList{}
 		err := c.B.Call("GET", "/subscriptions", c.Key, b, p, list)
 
-		ret := make([]interface{}, len(list.Values))
-		for i, v := range list.Values {
+		ret := make([]interface{}, len(list.Data))
+		for i, v := range list.Data {
 			ret[i] = v
 		}
 

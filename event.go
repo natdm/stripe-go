@@ -40,7 +40,7 @@ type EventData struct {
 // EventList is a list of events as retrieved from a list endpoint.
 type EventList struct {
 	ListMeta
-	Values []*Event `json:"data"`
+	Data []*Event `json:"data"`
 }
 
 // EventListParams is the set of parameters that can be used when listing events.

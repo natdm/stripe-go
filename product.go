@@ -54,7 +54,7 @@ type Product struct {
 // ProductList is a list of products as retrieved from a list endpoint.
 type ProductList struct {
 	ListMeta
-	Values []*Product `json:"data"`
+	Data []*Product `json:"data"`
 }
 
 // ProductListParams is the set of parameters that can be used when

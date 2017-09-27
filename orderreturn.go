@@ -16,7 +16,7 @@ type OrderReturn struct {
 // OrderReturnList is a list of returns as retrieved from a list endpoint.
 type OrderReturnList struct {
 	ListMeta
-	Values []*OrderReturn `json:"data"`
+	Data []*OrderReturn `json:"data"`
 }
 
 // OrderReturnListParams is the set of parameters that can be used when listing

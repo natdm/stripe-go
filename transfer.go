@@ -59,7 +59,7 @@ type Transfer struct {
 // TransferList is a list of transfers as retrieved from a list endpoint.
 type TransferList struct {
 	ListMeta
-	Values []*Transfer `json:"data"`
+	Data []*Transfer `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Transfer.

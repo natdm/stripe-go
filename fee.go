@@ -39,7 +39,7 @@ type Fee struct {
 // FeeList is a list of fees as retrieved from a list endpoint.
 type FeeList struct {
 	ListMeta
-	Values []*Fee `json:"data"`
+	Data []*Fee `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Fee.

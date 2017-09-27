@@ -66,7 +66,7 @@ type Customer struct {
 // CustomerList is a list of customers as retrieved from a list endpoint.
 type CustomerList struct {
 	ListMeta
-	Values []*Customer `json:"data"`
+	Data []*Customer `json:"data"`
 }
 
 // CustomerShippingDetails is the structure containing shipping information.

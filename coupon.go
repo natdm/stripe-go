@@ -50,7 +50,7 @@ type Coupon struct {
 // CouponList is a list of coupons as retrieved from a list endpoint.
 type CouponList struct {
 	ListMeta
-	Values []*Coupon `json:"data"`
+	Data []*Coupon `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Coupon.

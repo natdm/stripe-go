@@ -111,7 +111,7 @@ type BalanceTransaction struct {
 // BalanceTransactionList is a list of transactions as returned from a list endpoint.
 type BalanceTransactionList struct {
 	ListMeta
-	Values []*BalanceTransaction `json:"data"`
+	Data []*BalanceTransaction `json:"data"`
 }
 
 // Amount is a structure wrapping an amount value and its currency.

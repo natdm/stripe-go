@@ -107,7 +107,7 @@ type Invoice struct {
 // InvoiceList is a list of invoices as retrieved from a list endpoint.
 type InvoiceList struct {
 	ListMeta
-	Values []*Invoice `json:"data"`
+	Data []*Invoice `json:"data"`
 }
 
 // InvoiceLine is the resource representing a Stripe invoice line item.
@@ -137,7 +137,7 @@ type Period struct {
 // InvoiceLineList is a list object for invoice line items.
 type InvoiceLineList struct {
 	ListMeta
-	Values []*InvoiceLine `json:"data"`
+	Data []*InvoiceLine `json:"data"`
 }
 
 // InvoicePayParams is the set of parameters that can be used when

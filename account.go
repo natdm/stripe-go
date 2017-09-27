@@ -215,7 +215,7 @@ const (
 // AccountList is a list of accounts as returned from a list endpoint.
 type AccountList struct {
 	ListMeta
-	Values []*Account `json:"data"`
+	Data []*Account `json:"data"`
 }
 
 // ExternalAccountList is a list of external accounts that may be either bank
@@ -225,7 +225,7 @@ type ExternalAccountList struct {
 
 	// Values contains any external accounts (bank accounts and/or cards)
 	// currently attached to this account.
-	Values []*ExternalAccount `json:"data"`
+	Data []*ExternalAccount `json:"data"`
 }
 
 // ExternalAccount is an external account (a bank account or card) that's

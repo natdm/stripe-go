@@ -34,7 +34,7 @@ type FeeRefund struct {
 // FeeRefundList is a list object for fee refunds.
 type FeeRefundList struct {
 	ListMeta
-	Values []*FeeRefund `json:"data"`
+	Data []*FeeRefund `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a FeeRefund.

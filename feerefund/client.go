@@ -102,8 +102,8 @@ func (c Client) List(params *stripe.FeeRefundListParams) *Iter {
 		list := &stripe.FeeRefundList{}
 		err := c.B.Call("GET", fmt.Sprintf("/application_fees/%v/refunds", params.ApplicationFee), c.Key, b, p, list)
 
-		ret := make([]interface{}, len(list.Values))
-		for i, v := range list.Values {
+		ret := make([]interface{}, len(list.Data))
+		for i, v := range list.Data {
 			ret[i] = v
 		}
 

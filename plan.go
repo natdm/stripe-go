@@ -24,7 +24,7 @@ type Plan struct {
 // PlanList is a list of plans as returned from a list endpoint.
 type PlanList struct {
 	ListMeta
-	Values []*Plan `json:"data"`
+	Data []*Plan `json:"data"`
 }
 
 // PlanListParams is the set of parameters that can be used when listing plans.

@@ -41,7 +41,7 @@ type SKU struct {
 
 type SKUList struct {
 	ListMeta
-	Values []*SKU `json:"data"`
+	Data []*SKU `json:"data"`
 }
 
 type SKUListParams struct {

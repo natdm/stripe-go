@@ -112,7 +112,7 @@ type Sub struct {
 // SubList is a list object for subscriptions.
 type SubList struct {
 	ListMeta
-	Values []*Sub `json:"data"`
+	Data []*Sub `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Sub.

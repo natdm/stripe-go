@@ -30,7 +30,7 @@ type Reversal struct {
 // ReversalList is a list of object for reversals.
 type ReversalList struct {
 	ListMeta
-	Values []*Reversal `json:"data"`
+	Data []*Reversal `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Reversal.

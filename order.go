@@ -101,7 +101,7 @@ type Order struct {
 // OrderList is a list of orders as retrieved from a list endpoint.
 type OrderList struct {
 	ListMeta
-	Values []*Order `json:"data"`
+	Data []*Order `json:"data"`
 }
 
 // OrderListParams is the set of parameters that can be used when

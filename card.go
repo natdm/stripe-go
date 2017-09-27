@@ -194,7 +194,7 @@ type Card struct {
 // CardList is a list object for cards.
 type CardList struct {
 	ListMeta
-	Values []*Card `json:"data"`
+	Data []*Card `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Card.

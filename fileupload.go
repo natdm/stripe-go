@@ -54,7 +54,7 @@ type FileUpload struct {
 // FileUploadList is a list of file uploads as retrieved from a list endpoint.
 type FileUploadList struct {
 	ListMeta
-	Values []*FileUpload `json:"data"`
+	Data []*FileUpload `json:"data"`
 }
 
 // AppendDetails adds the file upload details to an io.ReadWriter. It returns

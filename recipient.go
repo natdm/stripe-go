@@ -67,7 +67,7 @@ type Recipient struct {
 // RecipientList is a list of recipients as retrieved from a list endpoint.
 type RecipientList struct {
 	ListMeta
-	Values []*Recipient `json:"data"`
+	Data []*Recipient `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Recipient.

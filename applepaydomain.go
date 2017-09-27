@@ -23,5 +23,5 @@ type ApplePayDomainListParams struct {
 // ApplePayDomainList is a list of ApplePayDomains as returned from a list endpoint.
 type ApplePayDomainList struct {
 	ListMeta
-	Values []*ApplePayDomain `json:"data"`
+	Data []*ApplePayDomain `json:"data"`
 }

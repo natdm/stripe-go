@@ -160,8 +160,8 @@ func (c Client) List(params *stripe.BankAccountListParams) *Iter {
 			err = errors.New("Invalid bank account params: either Customer or AccountID need to be set")
 		}
 
-		ret := make([]interface{}, len(list.Values))
-		for i, v := range list.Values {
+		ret := make([]interface{}, len(list.Data))
+		for i, v := range list.Data {
 			ret[i] = v
 		}
 

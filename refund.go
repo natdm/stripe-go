@@ -46,7 +46,7 @@ type Refund struct {
 // RefundList is a list object for refunds.
 type RefundList struct {
 	ListMeta
-	Values []*Refund `json:"data"`
+	Data []*Refund `json:"data"`
 }
 
 // UnmarshalJSON handles deserialization of a Refund.

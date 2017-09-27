@@ -34,5 +34,5 @@ type SubItem struct {
 // SubItemList is a list of invoice items as retrieved from a list endpoint.
 type SubItemList struct {
 	ListMeta
-	Values []*SubItem `json:"data"`
+	Data []*SubItem `json:"data"`
 }
